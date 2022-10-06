@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+
 import { Todo } from 'src/app/shared/models/todo.model';
-import { TodoService } from 'src/app/shared/services/todo.service';
 import { AppState } from 'src/app/state/app.state';
 import { addTodo, loadTodos, removeTodo } from 'src/app/state/todos/todo.actions';
 import { selectAllTodos } from 'src/app/state/todos/todo.selectors';
@@ -31,6 +31,6 @@ export class TodoComponent implements OnInit {
   }
 
   removeTodo(todo: Todo) {
-    this._store.dispatch(removeTodo({ id: todo.id ?? '' }));
+    this._store?.dispatch(removeTodo({ id: todo.id ?? '' }));
   }
 }

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { IonicStorageModule } from '@ionic/storage-angular';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -22,7 +21,6 @@ import { todoReducer } from './state/todos/todo.reducer';
     AppRoutingModule,
     BrowserAnimationsModule,
 
-    IonicStorageModule.forRoot(),
     StoreModule.forRoot({ todos: todoReducer }),
     EffectsModule.forRoot([TodoEffects]),
 
