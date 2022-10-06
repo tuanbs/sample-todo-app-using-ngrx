@@ -23,13 +23,13 @@ import { todoReducer } from './state/todos/todo.reducer';
     BrowserAnimationsModule,
 
     IonicStorageModule.forRoot(),
-
     StoreModule.forRoot({ todos: todoReducer }),
+    EffectsModule.forRoot([TodoEffects]),
+
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([TodoEffects]),
 
     SharedModule,
   ],

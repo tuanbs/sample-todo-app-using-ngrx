@@ -10,13 +10,13 @@ import { Todo } from 'src/app/shared/models/todo.model';
 
 export interface TodoState {
   todos: Todo[];
-  error: string;
+  error: string | null;
   status: 'pending' | 'loading' | 'error' | 'success';
 }
 
 export const initialState: TodoState = {
   todos: [],
-  error: null || '',
+  error: null,
   status: 'pending',
 };
 
@@ -39,7 +39,7 @@ export const todoReducer = createReducer(
   on(loadTodosSuccess, (state, { todos }) => ({
     ...state,
     todos: todos,
-    error: null || '',
+    error: null,
     status: 'success',
   })),
   // Handle todos load failure
